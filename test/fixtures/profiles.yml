@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  years_of_experience: 1
+  price: 9.99
+
+two:
+  first_name: MyString
+  last_name: MyString
+  years_of_experience: 1
+  price: 9.99
