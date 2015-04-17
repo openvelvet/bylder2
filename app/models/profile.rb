@@ -9,6 +9,16 @@ class Profile < ActiveRecord::Base
 									   	  :path => ":style/:id_:filename"
  	end
 
-  	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :current_title, presence: true
+  validates :industry, presence: true
+  validates :experience_level, presence: true
+  validates :linkedin_profile_link, presence: true
+  validates :years_of_experience, numericality: true
+  validates :price, numericality: { greater_than: 0 }
+  validates :image, :attachment_presence => true
 
 end
