@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417045851) do
+ActiveRecord::Schema.define(version: 20150417060944) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150417045851) do
     t.string   "industry"
     t.string   "experience_level"
     t.string   "linkedin_profile_link"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

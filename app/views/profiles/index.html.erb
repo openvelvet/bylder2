@@ -22,6 +22,8 @@
         <td><%= profile.last_name %></td>
         <td><%= profile.years_of_experience %></td>
         <td><%= profile.price %></td>
+        <td><%= profile.user.first_name %></td>
+        <td><%= profile.user.last_name %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
