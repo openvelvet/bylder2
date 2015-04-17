@@ -11,19 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416080037) do
+ActiveRecord::Schema.define(version: 20150417045851) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "years_of_experience"
     t.decimal  "price"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "current_title"
+    t.string   "industry"
+    t.string   "experience_level"
+    t.string   "linkedin_profile_link"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,6 +43,8 @@ ActiveRecord::Schema.define(version: 20150416080037) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

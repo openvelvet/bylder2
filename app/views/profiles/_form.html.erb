@@ -10,7 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class:"form-control" %>
+  </div>
   <div class="form-group">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name, class:"form-control" %>
@@ -20,6 +24,22 @@
     <%= f.text_field :last_name, class:"form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :current_title %><br>
+    <%= f.text_field :current_title, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :industry %><br>
+    <%= f.text_field :industry, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :experience_level %><br>
+    <%= f.text_field :experience_level, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :linkedin_profile_link %><br>
+    <%= f.text_field :linkedin_profile_link, class:"form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :years_of_experience %><br>
     <%= f.number_field :years_of_experience, class:"form-control" %>
   </div>
@@ -27,10 +47,7 @@
     <%= f.label :price %><br>
     <%= f.text_field :price, class:"form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image, class:"form-control" %>
-  </div>
+
   <div class="form-group">
     <%= f.submit class:"btn btn-primary" %>
   </div>
