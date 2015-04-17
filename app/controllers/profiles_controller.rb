@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :check_user, only: [:edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -62,6 +64,8 @@ class ProfilesController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
@@ -72,4 +76,11 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :years_of_experience, :price, :image,:linkedin_profile_link, :experience_level, :industry, :current_title)
     end
+
+    def check_user
+      if current_user != @profile.user
+        redirect_to root_url, alert: "Sorry, this profile belongs to someone else"
+      end
+    end
+
 end

@@ -25,8 +25,10 @@
         <td><%= profile.user.first_name %></td>
         <td><%= profile.user.last_name %></td>
         <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if (user_signed_in?) && (current_user == profile.user) %>
+          <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+          <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New Profile', new_profile_path, class:"btn btn-link" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Profile', new_profile_path, class:"btn btn-link" %>
+<% end %>

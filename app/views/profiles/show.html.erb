@@ -23,6 +23,7 @@
   <%= @profile.price %>
 </p>
 
-
-<%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-link" %> |
+<% if current_user == @profile.user %>
+	<%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-link" %> |
+<% end %>
 <%= link_to 'Back', profiles_path, class:"btn btn-link" %>
