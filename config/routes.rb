@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  
   devise_for :users
-  resources :profiles
+  resources :profiles do
+    resources :orders
+  end
 
   get 'pages/about'
-
   get 'pages/contact'
+  get 'professional' => "profiles#professional"
+
 
   root "profiles#index"
 

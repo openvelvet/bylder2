@@ -3,10 +3,14 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
+  def professional
+    @profiles = Profile.where(user: current_user).order("created_at DESC")
+  end
+
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.all.order("created_at DESC")
   end
 
   # GET /profiles/1
@@ -82,5 +86,10 @@ class ProfilesController < ApplicationController
         redirect_to root_url, alert: "Sorry, this profile belongs to someone else"
       end
     end
+
+    def hide_create_new_profile
+      @hide_profile = true
+    end
+
 
 end

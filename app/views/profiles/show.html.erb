@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
 	<%= image_tag @profile.image.url(:medium) %>
 </p>
@@ -14,6 +12,27 @@
 </p>
 
 <p>
+  <strong>Current Title:</strong>
+  <%= @profile.current_title %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @profile.industry %>
+</p>
+
+<p>
+  <strong>Experience Level:</strong>
+  <%= @profile.experience_level %>
+</p>
+
+<p>
+  <strong>LinkedIn Profile Link:</strong>
+  <%= @profile.linkedin_profile_link %>
+</p>
+
+
+<p>
   <strong>Years of experience:</strong>
   <%= @profile.years_of_experience %>
 </p>
@@ -22,6 +41,8 @@
   <strong>Price:</strong>
   <%= @profile.price %>
 </p>
+
+<%= link_to "Buy it now", new_profile_order_path(@profile), class: "btn btn-primary" %>
 
 <% if current_user == @profile.user %>
 	<%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-link" %> |
