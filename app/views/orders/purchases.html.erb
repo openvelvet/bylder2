@@ -7,6 +7,7 @@
     <th class="center">Price</th>
     <th class="center">Name</th>
     <th class="center">Date Ordered</th>
+    <th class="center">Action</th>
   </tr>
 
   <% @orders.each do |order| %>
@@ -14,6 +15,7 @@
       <td class="center"><%= number_to_currency(order.profile.price) %></td>
       <td class="center"><%= order.seller.first_name %> <%= order.seller.last_name %></td>
       <td class="center"><%= order.created_at.strftime("%B %-d, %Y") %></td>
+      <td class="center"><%= link_to "Schedule Time", pages_about_path, class:"btn btn-primary" %></td>
     </tr>
   <% end %>
 </table>
