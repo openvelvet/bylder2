@@ -21,6 +21,8 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to "Purchase History", purchases_path %></li>
+          <li><%= link_to "Order History", sales_path %></li>
           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "edit account", edit_user_registration_path %></li>
 

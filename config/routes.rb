@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'professional' => "profiles#professional"
+  get 'sales' => 'orders#sales'
+  get 'purchases' => 'orders#purchases'
 
 
   root "profiles#index"
