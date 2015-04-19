@@ -44,6 +44,8 @@
 
 <%= link_to "Buy it now", new_profile_order_path(@profile), class: "btn btn-primary", data: { no_turbolink: true } %>
 
+<%= link_to image_tag('blue-on-light.png'), user_omniauth_authorize_path(:stripe_connect) %>
+
 <% if current_user == @profile.user %>
 	<%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-link" %> |
 <% end %>

@@ -50,6 +50,11 @@
   </div>
 
   <div class="form-group">
+    <%= label_tag :country %><br>
+    <%= text_field_tag :country, { :name => nil, :'data-stripe' => "country", class:"form-control" } %>
+  </div>  
+
+  <div class="form-group">
     <%= f.submit class:"btn btn-primary" %>
   </div>
 <% end %>
